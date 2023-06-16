@@ -3,26 +3,18 @@ import PropTypes from 'prop-types';
 import css from "./ContactForm.module.css";
 
 
-export class ContactForm extends React.Component {
+export function ContactForm({ onAddContact }) {
 
-  state = {
-    name: '',
-    number: '',
-  }
-
-
-  newContact = (event) => {
+  const newContact = (event) => {
     event.preventDefault();
-    const { onAddContact } = this.props;
     const { name, number } = event.target.elements;
     onAddContact(name.value, number.value);
     event.target.reset();
   }
 
 
-  render() {
-    return (
-      <form onSubmit={this.newContact} className={css.FormContact}>
+  return (
+      <form onSubmit={newContact} className={css.FormContact}>
           <label className={css.LabelContact}> Name
             <input
               className={css.InputContact}
@@ -47,11 +39,13 @@ export class ContactForm extends React.Component {
 
           <button className={css.BtnContact} type="submit">Add contact</button>
         </form>
-    )
-  }
+  )
+  
 }
 
 
 ContactForm.propTypes = {
   onAddContact: PropTypes.func.isRequired,
 }
+
+
