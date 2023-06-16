@@ -1,0 +1,13 @@
+
+.FilterLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: bisque;
+  padding: 6px 20px 10px;
+}
+
+.FilterInput {
+  height: 24px;
+  border-radius: 4px;
+}

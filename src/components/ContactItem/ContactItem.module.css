@@ -1,0 +1,16 @@
+
+
+.ContactItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 228, 176);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* padding-right: 30px; */
+  font-weight: 500;
+}
+
+.ContactItem:nth-child(2n+1) {
+  background-color: rgb(255, 208, 196);
+}
+
